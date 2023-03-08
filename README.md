@@ -1,6 +1,6 @@
 # About this web app:
 
-This is a Django app which is Blog site app on witch:
+This is a Django app - Blog site app on witch:
 - user is able to register an account
 - user is able to post a new post and give it importanty level
 - authors are able to edit and delete ONLY the posts they made, admin is the exception here
