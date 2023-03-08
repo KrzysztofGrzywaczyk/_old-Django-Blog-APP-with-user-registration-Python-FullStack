@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+{% block content %}
+  <h1>Posts on this blog:</h1>
+  {% for post in posts %}
+  <div class="Wpis">
+      <hr>
+      <h2><a href="{% url 'blog-post-detail' post.id %}"> {{post.title}}</a></h2>
+      <p> author: {{post.author}}</p>
+      <p>{{post.cut_article}}</p>
+      <p>{{post.date}}</p>
+      <hr>
+  </div>
+  {% endfor %}
+</div>
+{% endblock %}
+

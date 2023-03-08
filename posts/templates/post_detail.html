@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+{% block content %}
+  <h1>Posts detail:</h1>
+  <div class="Wpis">
+      <hr>
+      <h2>{{post.title}}</h2>
+      <u>Author: {{post.author}}</u>
+      <p>Created: {{post.date}}</p>
+  </br>
+      <p>{{post.content|linebreaks }}</p>
+      <hr>
+  </div>
+
+    
+  {% if post.author == request.user.username or request.user.username == 'admin' %}
+        <form action="{% url 'blog-post-edit' post.id %}">
+            <input type="submit" value="Edit" />
+        </form>
+        </br>
+        <form action="{% url 'blog-post-delete' post.id %}">
+            <input type="submit" value="Delete" />
+        </form> 
+  {% endif %}
+</div>
+
+{% endblock %}
